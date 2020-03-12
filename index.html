@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Object Coding project page" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>ObjectCoding-NJUVISION</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="repository_url}}">Paper Link</a>
+
+          <h1 id="project_title">Object-Based Image Coding: A Learning-Driven Revisit</h1>
+          <h2 id="project_tagline">Qi Xia&nbsp;&nbsp;&nbsp;Haojie Liu&nbsp;&nbsp;&nbsp;Zhan Ma</h2>
+
+     
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Abstract</h1>
+        <p>The Object-Based Image Coding (OBIC) that was extensively studied about two decades ago, promised a vast application perspective for both ultra-low bitrate communication and high-level semantical content understanding, but it had rarely been used due to the inefficient compact representation of object with arbitrary shape. A fundamental issue behind is how to efficiently process the arbitrary-shaped objects at a fine granularity (e.g., feature element or pixel wise). To attack this, we have proposed to apply the element-wise masking and compression by devising an object segmentation network for image layer decomposition, and parallel convolution-based neural image compression networks to process masked foreground objects and background scene separately. All components are optimized in an end-to-end learning framework to intelligently weigh their (e.g., object and background) contributions for visually pleasant reconstruction. We have conducted comprehensive experiments to evaluate the performance on PASCAL VOC dataset at a very low bitrate scenario (e.g., ≲0.1 bits per pixel - bpp) which have demonstrated noticeable subjective quality improvement compared with JPEG2K, HEVC-based BPG and another learned image compression method.</p>
+        
+        <!-- <a href="http://pages.github.com">GitHub Pages automatic generator</a>. -->
+        <h1>Contributions</h1>
+        <ul>
+          <li>End-to-end learnable framework for intelligent object-based compression by parallel processing masked image layers;</li>
+          <li>Element-wise masking mechanism to support arbitrary-shaped object processing that leverages the advances in object segmentation and CNN-based image compression;</li>
+          <li>Modularized functional components for supporting parallel processing and future extension (e.g., multiple image layers, different utility loss, substream extraction, etc)</li>
+        </ul>
+
+
+
+        <h1>Framework</h1>
+    
+        <!-- <img alt="Framework" src="./images/framework.png" /> -->
+        <embed width="800" height="450" src="./images/framework.pdf"> </embed>
+        
+    
+        <p><strong>Fig.1. LearntOBIC.</strong> A two-layer structure is exemplified with upper part for object and lower part for background. Image segmentation uses the <a href="https://arxiv.org/abs/1606.00915">DeepLab</a> with ResNet-34 as backbone, while a variational autoencoder (VAE) based <a href="https://arxiv.org/abs/1910.06244">NLAIC</a> is used to process masked image layers in parallel. Q is for quantization, AE and AD are for respective arithmetic encoding and decoding.</p>
+
+        <h1>Experimental Results</h1>
+        
+        <embed width="800" height="1000" src="./images/visualresult.pdf"> </embed>
+        <!-- <img alt="Visual Comparison" src="./images/visualresult.png" /> -->
+        <p><strong>Fig.2. Visual Comparison</strong> Reconstructed snapshots processed by JPEG2K, BPG, NLAIC and proposed LearntOBIC using PASCAL VOC 2012. Our method achieves significantly better subjective quality.</p>
+
+        <table>
+        <tr>
+          <th></th>
+          <th>JPEG2K</th>
+          <th>BPG</th>
+          <th>NLAIC</th>
+          <th>LeartOBIC</th>
+        </tr>
+        <tr>
+          <td>ave. bpp</td>
+          <td>0.0675</td>
+          <td>0.0671</td>
+          <td>0.0636</td>
+          <td>0.0648</td>
+        </tr>
+        <tr>
+          <td>MS-SSIM</td>
+          <td>0.8339</td>
+          <td>0.8669</td>
+          <td>0.9083</td>
+          <td>0.8992</td>
+        </tr>
+        <tr>
+          <td>PSNR</td>
+          <td>23.27</td>
+          <td>24.08</td>
+          <td>23.36</td>
+          <td>22.71</td>
+        </tr>
+        </table>
+        <p><strong>Table.1. Objective result</strong> on PASCAL VOC 2012 test set.</p>
+        
+        <h1>Resource</h1>
+        <p>Code: <a href="https://github.com/Qi-X/Object_Coding">Link</a></p>
+        
+
+        
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Slate theme maintained by <a href="https://github.com/jasoncostello">Jason Costello</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+  </body>
+</html>
