@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="repository_url}}">View on GitHub</a>
 
           <h1 id="project_title">Object-Based Image Coding: A Learning-Driven Revisit</h1>
-          <h2 id="project_tagline">Qi Xia  Haojie Liu  Zhan Ma</h2>
+          <h2 id="project_tagline">Qi Xia&nbsp;&nbsp;&nbsp;Haojie Liu&nbsp;&nbsp;&nbsp;Zhan Ma</h2>
 
           <section id="downloads">
             <a class="zip_download_link" href="#">Download this project as a .zip file</a>
@@ -42,52 +42,48 @@
           <li>Modularized functional components for supporting parallel processing and future extension (e.g., multiple image layers, different utility loss, substream extraction, etc)</li>
         </ul>
 
-        
-        <p>Roses are <em>emphasized</em></br>
-        Violets are <strong>strong</strong></p>
 
 
         <h1>Framework</h1>
     
-        <img alt="Framework" src="http://github.com/Qi-X/NJUVISION_ObjectCoding/images/framework.png" />
+        <!--<img alt="Framework" src="http://github.com/Qi-X/NJUVISION_ObjectCoding/images/framework.png" /> -->
+        <embed src="http://github.com/Qi-X/NJUVISION_ObjectCoding/images/framework.pdf" width="100%" height="100%">
     
-        <p><strong>Fig.1. LearntOBIC.</strong> A two-layer structure is exemplified with upper part for object and lower part for background. Image segmentation uses the <a href="http://pages.github.com">DeepLab</a> with ResNet-34 as backbone, while a variational autoencoder (VAE) based <a href="http://pages.github.com">NLAIC</a> is used to process masked image layers in parallel. Q is for quantization, AE and AD are for respective arithmetic encoding and decoding.</p>
+        <p><strong>Fig.1. LearntOBIC.</strong> A two-layer structure is exemplified with upper part for object and lower part for background. Image segmentation uses the <a href="https://arxiv.org/abs/1606.00915">DeepLab</a> with ResNet-34 as backbone, while a variational autoencoder (VAE) based <a href="https://arxiv.org/abs/1910.06244">NLAIC</a> is used to process masked image layers in parallel. Q is for quantization, AE and AD are for respective arithmetic encoding and decoding.</p>
 
         <h1>Experimental Results</h1>
         
-        <img alt="subjective results" src="/subjective.png" />
+        <embed src="http://github.com/Qi-X/NJUVISION_ObjectCoding/images/visual_result.pdf" width="100%" height="100%">
         <p><strong>Fig.2. Visual Comparison</strong> Reconstructed snapshots processed by JPEG2K, BPG, NLAIC and proposed LearntOBIC using PASCAL VOC 2012. Our method achieves significantly better subjective quality.</p>
 
         <table>
         <tr>
           <th></th>
-          <th>ave. bpp</th>
-          <th>MS-SSIM</th>
-          <th>PSNR</th>
+          <th>JPEG2K</th>
+          <th>BPG</th>
+          <th>NLAIC</th>
+          <th>LeartOBIC</th>
         </tr>
         <tr>
-          <td>JPEG2K</td>
+          <td>ave. bpp</td>
           <td>0.0675</td>
-          <td>0.8339</td>
-          <th>23.27</th>
-        </tr>
-        <tr>
-          <td>BPG</td>
           <td>0.0671</td>
-          <td>0.8669</td>
-          <th>24.08</th>
-        </tr>
-        <tr>
-          <td>NLAIC</td>
           <td>0.0636</td>
-          <td>0.9083</td>
-          <th>23.36</th>
+          <td>0.0648</td>
         </tr>
         <tr>
-          <td>LearntOBIC</td>
-          <td>0.0648</td>
+          <td>MS-SSIM</td>
+          <td>0.8339</td>
+          <td>0.8669</td>
+          <td>0.9083</td>
           <td>0.8992</td>
-          <th>22.71</th>
+        </tr>
+        <tr>
+          <td>PSNR</td>
+          <td>23.27</td>
+          <td>24.08</td>
+          <td>23.36</td>
+          <td>22.71</td>
         </tr>
         </table>
         
